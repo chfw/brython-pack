@@ -1,0 +1,14 @@
+name: "brython-pack"
+organisation: "chfw"
+author: "C.W."
+contact: "wangc_2011@hotmail.com"
+company: "C.W."
+version: "0.0.1"
+current_version: "0.0.1"
+release: "0.0.0"
+copyright_year: 2017
+command_line_interface: "bp"
+entry_point: "brython_pack.main:main"
+license: MIT
+dependencies: []
+description: "packages your Python packages/files into a brython_modules.js"

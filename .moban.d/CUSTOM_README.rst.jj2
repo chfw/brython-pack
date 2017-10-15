@@ -1,0 +1,31 @@
+{% extends 'README.rst.jj2' %}
+
+{% block features %}
+Introduction
+================================================================================
+
+**{{name}}** {{description}}. The output is a `brython_modules.js`_ in your
+current directory.
+
+.. _brython_modules.js: https://github.com/chfw/bryecharts/tree/master/public/js
+{% endblock %}
+
+{% block bottom_block %}
+Usage
+================================================================================
+
+usage:
+
+    bp brython_stdlib.js requirements.txt your packages and file list
+
+where:
+
+    brython_stdlib.js: should be the accessible path to the lib file.
+    requirements.txt: is the hard coded and manually worked out dependencies
+                      on brython_stdlib.txt. Not the pip requirements.txt.
+    your packages file list: could be given as space separated arguments.
+
+examples:
+
+    bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
+{% endblock %}
