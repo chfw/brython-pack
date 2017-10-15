@@ -1,4 +1,5 @@
 name: "brython-pack"
+full_name: "Pack up your python package for Brython.js"
 organisation: "chfw"
 author: "C.W."
 contact: "wangc_2011@hotmail.com"

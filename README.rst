@@ -1,5 +1,6 @@
 ================================================================================
-brython-pack================================================================================
+brython-pack - Pack up your python package for Brython.js
+================================================================================
 
 .. image:: https://api.travis-ci.org/chfw/brython-pack.svg?branch=master
    :target: http://travis-ci.org/chfw/brython-pack
