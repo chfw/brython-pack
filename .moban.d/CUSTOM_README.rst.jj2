@@ -14,18 +14,20 @@ current directory.
 Usage
 ================================================================================
 
-usage:
+::
 
-    bp brython_stdlib.js requirements.txt your packages and file list
-
-where:
-
-    brython_stdlib.js: should be the accessible path to the lib file.
-    requirements.txt: is the hard coded and manually worked out dependencies
-                      on brython_stdlib.txt. Not the pip requirements.txt.
-    your packages file list: could be given as space separated arguments.
-
-examples:
-
-    bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
+   usage:
+   
+       bp brython_stdlib.js requirements.txt your packages and file list
+   
+   where:
+   
+       brython_stdlib.js: should be the accessible path to the lib file.
+       requirements.txt: is the hard coded and manually worked out dependencies
+                         on brython_stdlib.txt. Not the pip requirements.txt.
+       your packages file list: could be given as space separated arguments.
+   
+   examples:
+   
+       bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
 {% endblock %}
