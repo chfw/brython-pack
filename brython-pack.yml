@@ -10,6 +10,7 @@ release: "0.0.0"
 copyright_year: 2017
 command_line_interface: "bp"
 entry_point: "brython_pack.main:main"
+nodocs: true
 license: MIT
 dependencies: []
 description: "packages your Python packages/files into a brython_modules.js"
