@@ -8,8 +8,6 @@ brython-pack - Pack up your python package for Brython.js
 .. image:: https://codecov.io/gh/chfw/brython-pack/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/chfw/brython-pack
 
-.. image:: https://readthedocs.org/projects/brython-pack/badge/?version=latest
-   :target: http://brython-pack.readthedocs.org/en/latest/
 
 Introduction
 ================================================================================

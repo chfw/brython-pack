@@ -8,7 +8,6 @@ targets:
   - setup.py: custom_setup.py.jj2
   - requirements.txt: requirements.txt.jj2
   - "tests/requirements.txt": "tests/custom_requirements.txt.jj2"
-  - "docs/source/conf.py": "docs/source/conf.py.jj2"
   - test.sh: test.script.jj2
   - "brython_pack/_version.py": "_version.py.jj2"
   - "brython_pack/__init__.py": "__init__.py.jj2"
