@@ -8,6 +8,14 @@ def make_brython_modules(vfs):
     with open("brython_modules.js", "w", encoding="utf-8") as out:
         out.write("__BRYTHON__.use_VFS = true\n__BRYTHON__.VFS = ")
         json.dump(vfs, out)
+    # save in brython_modules.js
+    with open("brython_modules.log.txt", "w", encoding="utf-8") as out:
+        for key in sorted(list(vfs.keys())):
+            line = "%s%s(%s)" % (key, vfs[key][0],
+                                 'module' if len(vfs[key]) == 3 else 'file')
+            out.write("====%s start====\n" % line)
+            out.write(vfs[key][1])
+            out.write("====%s end====\n\n" % line)
 
 
 def remove_useless_newlines(src):

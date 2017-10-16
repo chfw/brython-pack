@@ -26,12 +26,17 @@ examples:
 
 
 def main():
+    if len(sys.argv) == 1:
+        show_help()
+
     lib_file = sys.argv[1]
     if lib_file in ['-h', '--help']:
         show_help()
+
     if len(sys.argv) < 4:
         print("Nothing to do")
         show_help()
+
     req_file = sys.argv[2]
     packages_and_files = sys.argv[3:]
 
