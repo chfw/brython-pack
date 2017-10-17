@@ -9,8 +9,10 @@ class Pack:
         self.bob = {}
         self.dependencies = {}
         self.modules = set()
+        self.base_path = None
 
     def work(self, path_file):
+        self.base_path = os.path.dirname(path_file)
         if os.path.isfile(path_file):
             self.__process(path_file)
         else:
@@ -21,12 +23,20 @@ class Pack:
             self.__process(f.path)
 
     def __process(self, afile):
-        key = afile.replace('/', '.')
-        key = key[:-3]
+        module = self.__extract_module_name(afile)
         with open(afile, 'r') as pyf:
             content = '\n'.join(utils.filter_out_docstring(pyf.read()))
-            if '__init__' in key:
-                key = key.replace('.__init__', '')
-                self.bob[key] = ['.py', content, 1]
+            if '__init__' in module:
+                module = module.replace('.__init__', '')
+                self.bob[module] = ['.py', content, 1]
             else:
-                self.bob[key] = ['.py', content]
+                self.bob[module] = ['.py', content]
+
+    def __extract_module_name(self, afile):
+        if self.base_path:
+            module = afile[len(self.base_path)+1:]
+            module = module.replace('/', '.')
+            module = module[:-3]
+        else:
+            module = afile
+        return module

@@ -38,7 +38,7 @@ def filter_out_docstring(content):
             else:
                 comment = 1
                 continue
-        if re.match('\s*r?"{3}\s*$', line) and comment == 1:
+        if re.match('\s*"{3}\s*$', line) and comment == 1:
             comment = 0
             continue
         if comment == 0:
