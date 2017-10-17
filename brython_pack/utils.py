@@ -30,7 +30,7 @@ def filter_out_docstring(content):
             continue
         if re.match('\s*"{3}.*"{3}', line):
             continue
-        if re.match('.*?\S+.*?r?"{3}', line) and triple_in_function == 0:
+        if re.match('.*?\S+.*?"{3}', line) and triple_in_function == 0:
             triple_in_function = 1
         if re.match('\s*r?"{3}', line) and comment == 0:
             if triple_in_function == 1:
@@ -42,7 +42,7 @@ def filter_out_docstring(content):
             comment = 0
             continue
         if comment == 0:
-            yield line
+            yield line + str(comment) + str(triple_in_function)
 
 
 def walk(folder):
