@@ -29,17 +29,17 @@ def main():
     if len(sys.argv) == 1:
         show_help()
 
-    lib_file = sys.argv[1]
-    if lib_file in ['-h', '--help']:
+    if sys.argv[1] in ['-h', '--help']:
         show_help()
 
     if len(sys.argv) < 4:
         print("Nothing to do")
         show_help()
 
-    req_file = sys.argv[2]
-    packages_and_files = sys.argv[3:]
+    process(sys.argv[1], sys.argv[2], sys.argv[3:])
 
+
+def process(lib_file, req_file, packages_and_files):
     # real work:
     stdlib = StdLib(lib_file)
     with open(req_file, 'r') as f:

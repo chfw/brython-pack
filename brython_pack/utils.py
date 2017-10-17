@@ -42,7 +42,7 @@ def filter_out_docstring(content):
             comment = 0
             continue
         if comment == 0:
-            yield line + str(comment) + str(triple_in_function)
+            yield line
 
 
 def walk(folder):
