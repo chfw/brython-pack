@@ -11,3 +11,14 @@ def test_pack():
         'testproj': ['.py', '', 1]
     }
     eq_(expected, p.bob)
+
+
+def test_pack_single_file():
+    test_file = "test.py"
+    with open(test_file, 'w') as f:
+        f.write('hello single file')
+    p = Pack()
+    p.work(test_file)
+    expected = {'test': ['.py', 'hello single file']}
+    eq_(expected, p.bob)
+    os.unlink(test_file)

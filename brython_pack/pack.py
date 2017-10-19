@@ -35,8 +35,8 @@ class Pack:
     def __extract_module_name(self, afile):
         if self.base_path:
             module = afile[len(self.base_path)+1:]
-            module = module.replace('/', '.')
-            module = module[:-3]
         else:
             module = afile
+        module = module.replace('/', '.')
+        module = module[:-3]
         return module
