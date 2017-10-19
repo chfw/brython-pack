@@ -8,12 +8,21 @@ Introduction
 ================================================================================
 
 **{{name}}** {{description}}. The output is a `brython_modules.js`_ in your
-current directory.
+current directory. It is used to pack up `pyecharts.js`_
 
-.. _brython_modules.js: https://github.com/chfw/bryecharts/tree/master/public/js
+.. _brython_modules.js: https://github.com/chfw/pyecharts.js/tree/master/public/js
+.. _pyecharts.js: https://chfw.github.io/pyecharts.js
+
 {% endblock %}
 
 {% block bottom_block %}
+Limitation
+================================================================================
+
+It cannot find the `requirements.txt` file for you, which you need to figure it
+out by yourself. Once you will have the dependency list(the dependency on
+brython_stdlib.js), the packing step is straight foward.
+
 Usage
 ================================================================================
 

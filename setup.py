@@ -22,7 +22,7 @@ DESCRIPTION = (
     ''
 )
 URL = 'https://github.com/chfw/brython-pack'
-DOWNLOAD_URL = '%s/archive/0.0.0.tar.gz' % URL
+DOWNLOAD_URL = '%s/archive/0.0.1.tar.gz' % URL
 FILES = ['README.rst',  'CHANGELOG.rst']
 KEYWORDS = [
     'python'
@@ -50,8 +50,8 @@ PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
 EXTRAS_REQUIRE = {}
 PUBLISH_COMMAND = '{0} setup.py sdist bdist_wheel upload -r pypi'.format(
     sys.executable)
-GS_COMMAND = ('gs brython-pack v0.0.0 ' +
-              "Find 0.0.0 in changelog for more details")
+GS_COMMAND = ('gs brython-pack v0.0.1 ' +
+              "Find 0.0.1 in changelog for more details")
 here = os.path.abspath(os.path.dirname(__file__))
 
 

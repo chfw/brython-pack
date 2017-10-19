@@ -6,7 +6,7 @@ contact: "wangc_2011@hotmail.com"
 company: "C.W."
 version: "0.0.1"
 current_version: "0.0.1"
-release: "0.0.0"
+release: "0.0.1"
 copyright_year: 2017
 command_line_interface: "bp"
 entry_point: "brython_pack.main:main"

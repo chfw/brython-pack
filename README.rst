@@ -13,19 +13,37 @@ Introduction
 ================================================================================
 
 **brython-pack** packages your Python packages/files into a brython_modules.js. The output is a `brython_modules.js`_ in your
-current directory.
+current directory. It is used to pack up `pyecharts.js`_
 
-.. _brython_modules.js: https://github.com/chfw/bryecharts/tree/master/public/js
+.. _brython_modules.js: https://github.com/chfw/pyecharts.js/tree/master/public/js
+.. _pyecharts.js: https://chfw.github.io/pyecharts.js
+
 
 Installation
 ================================================================================
 
+
+You can install it via pip:
+
+.. code-block:: bash
+
+    $ pip install brython-pack
+
+
+or clone it and install it:
 
 .. code-block:: bash
 
     $ git clone http://github.com/chfw/brython-pack.git
     $ cd brython-pack
     $ python setup.py install
+
+Limitation
+================================================================================
+
+It cannot find the `requirements.txt` file for you, which you need to figure it
+out by yourself. Once you will have the dependency list(the dependency on
+brython_stdlib.js), the packing step is straight foward.
 
 Usage
 ================================================================================
