@@ -41,15 +41,26 @@ def main():
 
 def process(lib_file, req_file, packages_and_files):
     # real work:
+    std_deps = cherry_pick_lib(lib_file, req_file)
+    pack = pack_up(packages_and_files)
+    # merge all
+    std_deps.update(pack)
+    make_brython_modules(std_deps)
+
+
+def cherry_pick_lib(lib_file, req_file):
     stdlib = StdLib(lib_file)
     with open(req_file, 'r') as f:
         deps = [x for x in f.read().split('\n') if x]
     std_deps = stdlib.install_requires(deps)
+    return std_deps
+
+
+def pack_up(packages_and_files):
     pack = Pack()
     for path in packages_and_files:
         pack.work(path)
-        std_deps.update(pack.bob)
-    make_brython_modules(std_deps)
+    return pack.bob
 
 
 def show_help():
