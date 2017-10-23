@@ -23,7 +23,7 @@ Installation
 ================================================================================
 
 
-You can install it via pip:
+You can install brython-pack via pip:
 
 .. code-block:: bash
 
@@ -34,7 +34,7 @@ or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone http://github.com/chfw/brython-pack.git
+    $ git clone https://github.com/chfw/brython-pack.git
     $ cd brython-pack
     $ python setup.py install
 
