@@ -1,10 +1,8 @@
 import os
-
 import brython_pack.utils as utils
 
 
-class Pack:
-
+class Pack(object):
     def __init__(self):
         self.bob = {}
         self.dependencies = {}
@@ -24,7 +22,7 @@ class Pack:
 
     def __process(self, afile):
         module = self.__extract_module_name(afile)
-        with open(afile, 'r') as pyf:
+        with open(afile, 'r', encoding='utf-8') as pyf:
             content = '\n'.join(utils.filter_out_docstring(pyf.read()))
             if '__init__' in module:
                 module = module.replace('.__init__', '')
