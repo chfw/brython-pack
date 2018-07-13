@@ -4,10 +4,10 @@ organisation: "chfw"
 author: "C.W."
 contact: "wangc_2011@hotmail.com"
 company: "C.W."
-version: "0.0.2"
-current_version: "0.0.2"
-release: "0.0.2"
-copyright_year: 2017
+version: "0.0.3"
+current_version: "0.0.3"
+release: "0.0.3"
+copyright_year: 2017-2018
 command_line_interface: "bp"
 entry_point: "brython_pack.main:main"
 nodocs: true
