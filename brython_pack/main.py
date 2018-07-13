@@ -7,7 +7,8 @@ from brython_pack.pack import Pack
 from brython_pack.utils import make_brython_modules
 
 
-HELP_TEXT = """version: %s
+HELP_TEXT = (
+    """version: %s
 usage:
 
     bp brython_stdlib.js requirements.txt your packages and file list
@@ -22,14 +23,16 @@ where:
 examples:
 
     bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
-""" % __version__
+"""
+    % __version__
+)
 
 
 def main():
     if len(sys.argv) == 1:
         show_help()
 
-    if sys.argv[1] in ['-h', '--help']:
+    if sys.argv[1] in ["-h", "--help"]:
         show_help()
 
     if len(sys.argv) < 4:
@@ -50,8 +53,8 @@ def process(lib_file, req_file, packages_and_files):
 
 def cherry_pick_lib(lib_file, req_file):
     stdlib = StdLib(lib_file)
-    with open(req_file, 'r') as f:
-        deps = [x for x in f.read().split('\n') if x]
+    with open(req_file, "r") as f:
+        deps = [x for x in f.read().split("\n") if x]
     std_deps = stdlib.install_requires(deps)
     return std_deps
 
@@ -68,5 +71,5 @@ def show_help():
     sys.exit(0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

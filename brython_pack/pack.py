@@ -22,19 +22,19 @@ class Pack(object):
 
     def __process(self, afile):
         module = self.__extract_module_name(afile)
-        with open(afile, 'r', encoding='utf-8') as pyf:
-            content = '\n'.join(utils.filter_out_docstring(pyf.read()))
-            if '__init__' in module:
-                module = module.replace('.__init__', '')
-                self.bob[module] = ['.py', content, 1]
+        with open(afile, "r", encoding="utf-8") as pyf:
+            content = "\n".join(utils.filter_out_docstring(pyf.read()))
+            if "__init__" in module:
+                module = module.replace(".__init__", "")
+                self.bob[module] = [".py", content, 1]
             else:
-                self.bob[module] = ['.py', content]
+                self.bob[module] = [".py", content]
 
     def __extract_module_name(self, afile):
         if self.base_path:
-            module = afile[len(self.base_path)+1:]
+            module = afile[len(self.base_path) + 1 :]
         else:
             module = afile
-        module = module.replace('/', '.')
+        module = module.replace("/", ".")
         module = module[:-3]
         return module
