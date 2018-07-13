@@ -19,7 +19,7 @@ def make_brython_modules(vfs):
 
 
 def remove_useless_newlines(src):
-    return re.sub('\n(\s+\n)+', '\n\n', src)
+    return re.sub('\n(\s+\n)+', '\n', src)
 
 
 def filter_out_docstring(content):
@@ -30,7 +30,7 @@ def filter_out_docstring(content):
             continue
         if re.match('\s*"{3}.*"{3}', line):
             continue
-        if re.match('.*?\S+.*?"{3}', line) and triple_in_function == 0:
+        if re.match('.*?\S+.*?"{3}', line) and triple_in_function == 0 and (not line.startswith('r"""')):
             triple_in_function = 1
         if re.match('\s*r?"{3}', line) and comment == 0:
             if triple_in_function == 1:

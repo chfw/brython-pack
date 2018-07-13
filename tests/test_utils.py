@@ -24,7 +24,7 @@ def test_newline_removal():
     ]
     for test in matrix:
         result = utils.remove_useless_newlines(test)
-        eq_(result, '\n\n')
+        eq_(result, '\n')
 
 
 def test_filter_docstring():
@@ -33,10 +33,23 @@ def test_filter_docstring():
         '     """ single line variant """',
         '   """ multiple \n line \n doc string\n """',
         '  """ multiline\n doc \n string\n """',
+        'r"""File-like objects that read from or.\n"""'
     ]
     for test in matrix:
         result = list(utils.filter_out_docstring(test))
-        assert len(result) == 0
+        assert len(result) == 0, result
+
+
+def test_not_to_filter_code():
+    code = '  f. write("""\\/*\n * Secret Labs\' Engine\n */ \n \n """)'
+    expected = [
+        '  f. write("""\\/*',
+        " * Secret Labs' Engine",
+        ' */ ',
+        ' ',
+        ' """)']
+    result = list(utils.filter_out_docstring(code))
+    eq_(expected, result)
 
 
 class TestMakeModule(unittest.TestCase):
