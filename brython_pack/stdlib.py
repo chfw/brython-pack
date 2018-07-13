@@ -8,7 +8,7 @@ class StdLib:
         self.stdlib = None
         with open(lib_path, encoding="utf-8") as fobj:
             modules = fobj.read()
-            modules = modules[modules.find("{") :]
+            modules = modules[modules.find("{"):]
             self.stdlib = json.loads(modules)
 
     def install_requires(self, modules):
