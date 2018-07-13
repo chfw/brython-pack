@@ -12,3 +12,6 @@ targets:
   - "brython_pack/_version.py": "_version.py.jj2"
   - "brython_pack/__init__.py": "__init__.py.jj2"
   - .gitignore: gitignore.jj2
+  - output: CHANGELOG.rst
+    configuration: changelog.yml
+    template: CHANGELOG.rst.jj2
