@@ -42,9 +42,9 @@ or clone it and install it:
 Limitation
 ================================================================================
 
-It **cannot** find the `requirements.txt` file for you, which you need to figure it
-out by yourself. Once you will have the dependency list(the dependency on
-brython_stdlib.js), the packing step is straight foward.
+It **cannot** collect the package dependency on built-in python modules (the dependencies on brython_stdlib.js)
+for you. You need to figure it out by yourself and save it in a requirements.txt file.
+Once you will have the dependency list, the packing step is straight foward.
 
 Usage
 ================================================================================
