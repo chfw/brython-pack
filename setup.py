@@ -1,4 +1,6 @@
-# Template by setupmobans
+#!/usr/bin/env python3
+
+# Template by pypi-mobans
 import os
 import sys
 import codecs
@@ -15,22 +17,19 @@ LICENSE = 'MIT'
 ENTRY_POINTS = {
     'console_scripts': [
         'bp = brython_pack.main:main'
-    ]
+    ],
 }
 DESCRIPTION = (
-    'packages your Python packages/files into a brython_modules.js' +
-    ''
+    'packages your Python packages/files into a brython_modules.js'
 )
 URL = 'https://github.com/chfw/brython-pack'
 DOWNLOAD_URL = '%s/archive/0.0.2.tar.gz' % URL
-FILES = ['README.rst',  'CHANGELOG.rst']
+FILES = ['README.rst', 'CHANGELOG.rst']
 KEYWORDS = [
     'python'
 ]
 
 CLASSIFIERS = [
-    'Topic :: Office/Business',
-    'Topic :: Utilities',
     'Topic :: Software Development :: Libraries',
     'Programming Language :: Python',
     'Intended Audience :: Developers',
@@ -44,6 +43,7 @@ CLASSIFIERS = [
 
 INSTALL_REQUIRES = [
 ]
+SETUP_COMMANDS = {}
 
 
 PACKAGES = find_packages(exclude=['ez_setup', 'examples', 'tests'])
@@ -55,7 +55,8 @@ GS_COMMAND = ('gs brython-pack v0.0.2 ' +
               "Find 0.0.2 in changelog for more details")
 NO_GS_MESSAGE = ('Automatic github release is disabled. ' +
                  'Please install gease to enable it.')
-UPLOAD_FAILED_MSG = ('Upload failed. please run "%s" yourself.')
+UPLOAD_FAILED_MSG = (
+    'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND)
 HERE = os.path.abspath(os.path.dirname(__file__))
 
 
@@ -80,6 +81,8 @@ class PublishCommand(Command):
         try:
             self.status('Removing previous builds...')
             rmtree(os.path.join(HERE, 'dist'))
+            rmtree(os.path.join(HERE, 'build'))
+            rmtree(os.path.join(HERE, 'brython_pack.egg-info'))
         except OSError:
             pass
 
@@ -94,6 +97,11 @@ class PublishCommand(Command):
                 self.status(UPLOAD_FAILED_MSG % PUBLISH_COMMAND)
 
         sys.exit()
+
+
+SETUP_COMMANDS.update({
+    'publish': PublishCommand
+})
 
 
 def has_gease():
@@ -120,7 +128,8 @@ def read_files(*files):
 
 def read(afile):
     """Read a file into setup"""
-    with codecs.open(afile, 'r', 'utf-8') as opened_file:
+    the_relative_file = os.path.join(HERE, afile)
+    with codecs.open(the_relative_file, 'r', 'utf-8') as opened_file:
         content = filter_out_test_code(opened_file)
         content = "".join(list(content))
         return content
@@ -170,7 +179,5 @@ if __name__ == '__main__':
         zip_safe=False,
         entry_points=ENTRY_POINTS,
         classifiers=CLASSIFIERS,
-        cmdclass={
-            'publish': PublishCommand,
-        }
+        cmdclass=SETUP_COMMANDS
     )

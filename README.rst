@@ -2,11 +2,12 @@
 brython-pack - Pack up your python package for Brython.js
 ================================================================================
 
-.. image:: https://api.travis-ci.org/chfw/brython-pack.svg?branch=master
+.. image:: https://api.travis-ci.org/chfw/brython-pack.svg
    :target: http://travis-ci.org/chfw/brython-pack
 
-.. image:: https://codecov.io/gh/chfw/brython-pack/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/chfw/brython-pack
+.. image:: https://codecov.io/github/chfw/brython-pack/coverage.png
+   :target: https://codecov.io/github/chfw/brython-pack
+
 
 
 Introduction
