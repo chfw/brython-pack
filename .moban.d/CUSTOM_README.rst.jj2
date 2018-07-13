@@ -43,6 +43,6 @@ Usage
    
        bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
 
-If you are wondering what the reequirements.txt file look like, here is an example
+If you are wondering what the requirements.txt file look like, here is an example
 `requirement.txt <https://github.com/chfw/pyecharts.js/blob/master/bp-requirements.txt>`_
 {% endblock %}
