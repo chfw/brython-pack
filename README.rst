@@ -42,7 +42,7 @@ or clone it and install it:
 Limitation
 ================================================================================
 
-It cannot find the `requirements.txt` file for you, which you need to figure it
+It **cannot** find the `requirements.txt` file for you, which you need to figure it
 out by yourself. Once you will have the dependency list(the dependency on
 brython_stdlib.js), the packing step is straight foward.
 
@@ -65,3 +65,6 @@ Usage
    examples:
    
        bp dependencies/brython_stdlib.js requirements.txt pyecharts editor.py
+
+If you are wondering what the reequirements.txt file look like, here is an example
+`requirement.txt <https://github.com/chfw/pyecharts.js/blob/master/bp-requirements.txt>`_
