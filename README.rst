@@ -7,7 +7,14 @@ brython-pack - Pack up your python package for Brython.js
 
 .. image:: https://codecov.io/github/chfw/brython-pack/coverage.png
    :target: https://codecov.io/github/chfw/brython-pack
+.. image:: https://badge.fury.io/py/brython-pack.svg
+   :target: https://pypi.org/project/brython-pack
 
+.. image:: https://pepy.tech/badge/brython-pack/month
+   :target: https://pepy.tech/project/brython-pack/month
+
+.. image:: https://img.shields.io/github/stars/chfw/brython-pack.svg?style=social&maxAge=3600&label=Star
+    :target: https://github.com/chfw/brython-pack/stargazers
 
 
 Introduction

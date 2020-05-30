@@ -1,6 +1,6 @@
 configuration:
   template_dir:
-  - "mobans/templates"
+  - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=dev!/templates"
   - ".moban.d"
   configuration: brython-pack.yml
 targets:
