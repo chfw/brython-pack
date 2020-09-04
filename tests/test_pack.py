@@ -1,5 +1,7 @@
 import os
+
 from nose.tools import eq_
+
 from brython_pack.pack import Pack
 
 

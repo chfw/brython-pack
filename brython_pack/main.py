@@ -1,11 +1,9 @@
 import sys
 
-
-from brython_pack._version import __version__
-from brython_pack.stdlib import StdLib
 from brython_pack.pack import Pack
 from brython_pack.utils import make_brython_modules
-
+from brython_pack.stdlib import StdLib
+from brython_pack._version import __version__
 
 HELP_TEXT = (
     """version: %s

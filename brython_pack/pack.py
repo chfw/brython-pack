@@ -1,4 +1,5 @@
 import os
+
 import brython_pack.utils as utils
 
 
@@ -32,7 +33,7 @@ class Pack(object):
 
     def __extract_module_name(self, afile):
         if self.base_path:
-            module = afile[len(self.base_path) + 1:]
+            module = afile[len(self.base_path) + 1 :]
         else:
             module = afile
         module = module.replace("/", ".")

@@ -1,5 +1,6 @@
 configuration:
   template_dir:
+  - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=dev!/statics"
   - "git://github.com/moremoban/pypi-mobans.git?submodule=true&brach=dev!/templates"
   - ".moban.d"
   configuration: brython-pack.yml
@@ -15,3 +16,9 @@ targets:
   - output: CHANGELOG.rst
     configuration: changelog.yml
     template: CHANGELOG.rst.jj2
+  - Makefile: Makefile.jj2
+  - format.sh: format.sh.jj2
+  - .isort.cfg: isort.cfg.jj2
+  - ".github/workflows/pythonpublish.yml": "pythonpublish.yml"
+  - ".github/workflows/moban-update.yml": "moban-update.yml"
+

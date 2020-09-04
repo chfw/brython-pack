@@ -1,6 +1,8 @@
 import os
 import unittest
+
 from nose.tools import eq_
+
 import brython_pack.utils as utils
 
 TEST_MODULE_LOG = """====testjs.js(file) start====
@@ -76,4 +78,4 @@ def test_walk():
         "tests/fixtures/testproj/__init__.py",
         "tests/fixtures/testproj/main.py",
     ]
-    eq_([f.path for f in file_list], expected)
+    eq_(sorted([f.path for f in file_list]), sorted(expected))

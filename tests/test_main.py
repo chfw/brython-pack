@@ -1,8 +1,10 @@
 import os
 import sys
+
 from mock import patch
+from nose.tools import eq_, raises
+
 from brython_pack.main import main, pack_up, cherry_pick_lib
-from nose.tools import raises, eq_
 
 
 @raises(SystemExit)
